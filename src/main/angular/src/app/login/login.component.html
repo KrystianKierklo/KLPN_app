@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<main>
+  <app-navbar></app-navbar>
+  <div class="hero">
+    <div class="form-box">
+      <p class="login-span">Logowanie</p>
+      <p class="login_underline"></p>
+      <div class="input-group">
+        <div class="grid p-fluid">
+          <div class="col-12 md:col-4">
+            <div class="p-inputgroup input-email">
+              <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+              <input type="text" pInputText [(ngModel)]="model.email" placeholder="E-mail">
+            </div>
+            <div class="p-inputgroup input-password">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <input type="password" pInputText [(ngModel)]="model.password" placeholder="Hasło">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button pButton pRipple
+              class="p-button-outlined p-button-success"
+              style="top: 200px; left: 32%; color: #18c015"
+              type="button"
+              icon="pi pi-sign-in"
+              (click)="btnLogin()"
+              routerLinkActive="active"
+              label="Zaloguj się">
+      </button>
+      <p class="optional">Nie masz konta? <a href="/register"> Zarejestruj się </a> już teraz !</p>
+    </div>
+    <app-footer></app-footer>
+  </div>
+
+  <p-toast position="top-center"></p-toast>
+
+</main>
+
+
+
+

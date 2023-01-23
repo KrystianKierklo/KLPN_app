@@ -1,0 +1,47 @@
+main{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/img/football-field-2588146.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.reservations-table {
+    width: 90%;
+    height: 50%;
+    opacity: 0.9;
+    margin: auto;
+    margin-top: 1%;
+}
+
+.delete {
+    width: 200px;
+    background-color: rgb(255, 60, 0);
+    border-color: rgb(255, 60, 0);
+}
+
+.delete:hover {
+    width: 200px;
+    background-color: rgb(175, 23, 23);
+    border-color: rgb(175, 23, 23);
+
+}
+
+.edit {
+    width: 200px;
+    background-color: rgb(76, 185, 66);
+    border-color: rgb(76, 185, 66);
+}
+
+.edit:hover {
+    width: 200px;
+    background-color: rgb(48, 141, 40);
+    border-color: rgb(48, 141, 40);
+}
+
+.center-caption {
+    text-align: center;
+    font-size: large;
+}

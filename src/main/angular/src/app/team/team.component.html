@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<main>
+  <app-navbar></app-navbar>
+  <div class="page">
+    <p class="main-text">Zarejestruj druzynę</p>
+    <div class="container">
+
+    <div class="left">
+      <div class="name_section">
+        <p class="category">Nazwa:</p>
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText [(ngModel)]="team.name">
+          <label for="float-input">Nazwa drużyny</label>
+        </span>
+      </div>
+
+      <div class="player_section">
+        <p class="category">Zawodnik:</p>
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText [(ngModel)]="player.indexNumber" [maxLength]="6">
+          <label for="float-input">Numer indeksu</label>
+        </span>
+        <p-dropdown [options]="positions" [(ngModel)]="player.position" placeholder="Wybierz pozycję" [showClear]="true"></p-dropdown>
+        <div class="field-checkbox">
+          <p-checkbox [binary]="true" [(ngModel)]="player.isReferee"></p-checkbox>
+          <label> Sędzia</label>
+        </div>
+        <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded" (click)="addPlayer()"></button>
+      </div>
+
+      <div class="decision">
+        <button pButton pRipple
+                class="p-button-lg p-button-outlined p-button-danger"
+                type="button"
+                style="margin-right: 10px; background-color:white "
+                icon="pi pi-times"
+                (click)="btnDecline()"
+                routerLinkActive="active"
+                label="Anuluj">
+        </button>
+        <button pButton pRipple
+                class="p-button-lg p-button-outlined p-button-success"
+                style="margin-left: 10px; background-color:white; color: forestgreen"
+                type="button"
+                icon="pi pi-check"
+                (click)="btnConfirm()"
+                routerLinkActive="active"
+                label="Zatwierdź">
+        </button>
+      </div>
+    </div>
+
+    <div class="right">
+      <p class="right-text">Aktualny skład:</p>
+      <ul class="list">
+        <li *ngFor="let player of players">
+          {{player.indexNumber}}
+          <button pButton pRipple
+                  (click)="removePlayer(player)"
+                  type="button"
+                  icon="pi pi-minus"
+                  class="p-button-rounded p-button-danger p-button-sm">
+          </button>
+        </li>
+      </ul>
+    </div>
+    </div>
+
+
+  </div>
+  <app-footer></app-footer>
+</main>

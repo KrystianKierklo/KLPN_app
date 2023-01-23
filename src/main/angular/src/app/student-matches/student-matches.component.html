@@ -1,0 +1,36 @@
+<main>
+  <app-navbar></app-navbar>
+  <div class="reservations-table">
+    <p-table [value]="studentMatches" [paginator]="true" [rows]="7">
+            <ng-template pTemplate="caption">
+                <div class="center-caption">
+                    Lista meczów twojej drużyny
+                </div>
+            </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 10px;"></th>
+                <th style="width: 500px;">Spotkanie</th>
+                <th style="width: 300px;">Data</th>
+                <th *ngIf="loginService.isCaptain()">Poproś o zmianę daty spotkania</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-matchForStudentResponseDTO>
+            <tr>
+                <td></td>
+                <td>{{ matchForStudentResponseDTO.teams }}</td>
+                <td>{{ matchForStudentResponseDTO.date }}</td>
+                <td *ngIf="loginService.isCaptain()" style="text-align: center;">
+                  <button 
+                  type="button" 
+                  pButton label="Zmień datę spotkania" 
+                  class="edit" 
+                  (click)="btnEdit(matchForStudentResponseDTO.reservationId)">
+                  </button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+  <app-footer></app-footer>
+</main>

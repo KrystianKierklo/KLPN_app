@@ -1,0 +1,30 @@
+
+.navbar {
+  letter-spacing: 2px;
+}
+
+.btn-login{
+  border: None;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.logo-btn{
+  border: None;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+
+.logout {
+  background-color: rgb(21, 175, 7);
+  border-color: rgb(21, 175, 7);
+}
+
+.logout:hover {
+  background-color: rgb(13, 112, 4);
+  border-color: rgb(13, 112, 4);
+}

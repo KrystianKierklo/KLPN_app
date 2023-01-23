@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<main>
+  <app-navbar></app-navbar>
+  <div class="hero">
+    <div class="form-box">
+      <p class="login-span">Rejestracja</p>
+      <p class="login_underline"></p>
+      <div class="input-group">
+        <div class="grid p-fluid">
+          <div class="col-12 md:col-4">
+            <div class="p-inputgroup input-name">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText [(ngModel)]="userRequestDto.firstName" placeholder="Imię">
+            </div>
+
+            <div class="p-inputgroup input-lastname">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText [(ngModel)]="userRequestDto.lastName" placeholder="Nazwisko">
+            </div>
+
+            <div class="p-inputgroup input-email">
+              <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+              <input type="text" pInputText [(ngModel)]="userRequestDto.email" placeholder="E-mail">
+            </div>
+
+            <div class="p-inputgroup input-password">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <input type="password" pInputText [(ngModel)]="userRequestDto.password" placeholder="Hasło">
+            </div>
+
+            <div class="p-inputgroup input-index">
+              <span class="p-inputgroup-addon"><i class="pi pi-hashtag"></i></span>
+             <input type="text" pInputText [maxLength]="6" min="100000" [(ngModel)]="userRequestDto.indexNumber" placeholder="Numer indeksu (opcjonalnie)">
+            </div>
+
+            <div class="p-inputgroup input-phone">
+              <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+              <input type="text" pInputText [maxLength]="9" [(ngModel)]="userRequestDto.phoneNumber" placeholder="Numer telefonu">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button pButton pRipple
+              class="p-button-outlined p-button-success"
+              style="top: 440px; left: 32%; color: #18c015"
+              type="button"
+              icon="pi pi-sign-in"
+              (click)="btnRegister()"
+              routerLinkActive="active"
+              label="Załóż konto">
+      </button>
+      <p class="optional">Masz konto? <a href="/login"> Zaloguj się </a> już teraz!</p>
+    </div>
+    <app-footer></app-footer>
+  </div>
+
+</main>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+main{
+  height: 100%;
+  width: 100%;
+
+  .page{
+    height: 88vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../../assets/img/football-field-2588146.jpg");;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .title{
+      font-size: 50px;
+      word-spacing: 10px;
+      background-image: linear-gradient(180deg, rgba(255,255,255,1) 17%, rgba(70,252,69,1) 79%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tabela{
+      height: 60%;
+      width: 70%;
+      position: absolute;
+      left: 50%;
+      top: 14%;
+      transform: translateX(-50%);
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 0.1px solid #b1a6bb;
+      position: relative;
+    }
+
+    tr:hover,
+    tr:focus-within {
+      background: rgba(33, 10, 65, 0.82);
+      outline: #6d20ac;
+      color: rgb(238, 212, 212);
+    }
+
+    td > a:first-child {
+      display: flex;
+      padding: 0.1px;
+      text-decoration: none;
+      color: inherit;
+      z-index: 0;
+    }
+  }
+}
+

@@ -1,0 +1,65 @@
+<main>
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="match">
+            <div class="inner-div" style="font-weight: 600; font-size: 40px;">
+                {{ thisMatch.teams }}
+            </div>
+            <div class="inner-div" style="font-weight: 400; font-size: 30px;">
+                {{ thisMatch.date }}
+            </div>
+            <div class="inner-div" style="font-weight: 700; font-size: 50px;">
+                {{ thisMatch.result }}
+            </div>
+        </div>
+        <div class="statistics-table">
+            <p-table [value]="matchStatistics" [paginator]="true" [rows]="3">
+                    <ng-template pTemplate="caption">
+                        <div class="center-caption">
+                            Edytuj statystyki meczu
+                        </div>
+                    </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Zdarzenie</th>
+                        <th>Minuta</th>
+                        <th>Indeks zawodnika</th>
+                        <th style="width: 100px; text-align: center;">Usuń</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-matchStatisticResponseDTO>
+                    <tr>
+                        <td> {{ matchStatisticResponseDTO.event }}</td>
+                        <td> {{ matchStatisticResponseDTO.minute }}</td>
+                        <td> {{ matchStatisticResponseDTO.studentIndex }}</td>
+                        <td><button type="button" pButton label="Usuń" class="delete" (click)="btnDelete(matchStatisticResponseDTO.id)"><i class="pi pi-trash"></i></button></td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="footer">
+                        <span>
+                            <p-dropdown [options]="events" [(ngModel)]="matchStatistic.event" placeholder="Zdarzenie" [showClear]="true" [style]="{'width':'220px'}"></p-dropdown>
+
+                            <p-inputMask [(ngModel)]="matchStatistic.minute" mask="99" [unmask]="true" placeholder="Minuta" styleClass="input-mask" [style]="{'width':'100px', 'margin-left':'20px'}"></p-inputMask>
+
+                            <p-inputMask [(ngModel)]="matchStatistic.studentIndex" mask="999999" [unmask]="true" placeholder="Indeks" styleClass="input-mask" [style]="{'width':'100px', 'margin-left':'20px'}"></p-inputMask>
+
+                            <button pButton pRipple
+                            class="p-button-lg p-button-outlined p-button-success"
+                            style="margin-left: 130px; background-color:white; color: forestgreen; width:220px; height: 45px;"
+                            type="button"
+                            icon="pi pi-check"
+                            (click)="btnAdd()"
+                            routerLinkActive="active"
+                            label="Dodaj statystykę">
+                            </button>
+
+                        </span>
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+        <div style="height: 100px;"></div>
+    </div>
+    <app-footer></app-footer>
+  </main>
